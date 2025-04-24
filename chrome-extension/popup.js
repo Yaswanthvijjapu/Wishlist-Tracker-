@@ -17,6 +17,7 @@ document.getElementById('addItemButton').addEventListener('click', async functio
             price: itemPrice,
           }),
         });
+        
   
         const data = await response.json();
         if (data.success) {
