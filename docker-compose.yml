@@ -1,0 +1,22 @@
+services:
+  server:
+    build: ./server
+    container_name: wishlist-backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./server:/app
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+
+  client:
+    build: ./client
+    container_name: wishlist-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+    environment:
+      - NODE_ENV=development
+    command: npm start
